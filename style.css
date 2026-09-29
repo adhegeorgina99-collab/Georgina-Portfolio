@@ -1,976 +1,1352 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================
+   GEORGINA ADHEKUGWU PORTFOLIO
+   Modern Engineering / Technology Design
+========================================= */
+
+:root {
+    --navy: #10182f;
+    --navy-2: #182347;
+    --blue: #5267d8;
+    --blue-light: #e8ecff;
+    --lavender: #eeeaff;
+    --cream: #faf9f6;
+    --white: #ffffff;
+    --text: #172033;
+    --muted: #697188;
+    --soft: #f1f3f8;
+    --line: #dfe3ec;
+    --dark-line: #303957;
+
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    color: var(--muted);
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 
-    <title>Georgina Adhekugwu | Computer Engineering & Technology</title>
+/* =========================================
+   NAVIGATION
+========================================= */
 
-    <meta
-        name="description"
-        content="Portfolio of Georgina Adhekugwu — Computer Engineering undergraduate, data analyst, writer, and AI & automation enthusiast."
-    >
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    background: rgba(250, 249, 246, 0.92);
+    border-bottom: 1px solid var(--line);
 
-<body>
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
 
-    <!-- ================= NAVIGATION ================= -->
+.nav-container {
+    max-width: var(--max-width);
+    min-height: 78px;
 
-    <header class="navbar">
-        <div class="nav-container">
+    margin: 0 auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            <a href="#home" class="logo">GA</a>
+    border-radius: 12px;
 
-            <nav>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#contact">Contact</a>
-            </nav>
+    background: var(--navy);
+    color: white;
 
-        </div>
-    </header>
+    font-size: 13px;
+    font-weight: 800;
 
+    box-shadow: 0 8px 20px rgba(16, 24, 47, 0.15);
 
-    <!-- ================= HERO ================= -->
+    transition: 0.3s ease;
+}
 
-    <main>
+.logo:hover {
+    background: var(--blue);
+    transform: translateY(-3px) rotate(-3deg);
+}
 
-        <section id="home" class="hero">
+.nav-container nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
 
-            <div class="hero-content">
+.nav-container nav a {
+    position: relative;
 
-                <p class="eyebrow">
-                    COMPUTER ENGINEERING • DATA • AUTOMATION
-                </p>
+    color: #4c556b;
 
-                <h1>
-                    Georgina<br>
-                    <span>Adhekugwu.</span>
-                </h1>
+    font-size: 11px;
+    font-weight: 700;
 
-                <p class="hero-description">
-                    Computer Engineering undergraduate, data analyst, writer,
-                    and AI & automation enthusiast exploring the intersection
-                    of technology, industrial systems, data and safety.
-                </p>
+    transition: 0.25s ease;
+}
 
-                <div class="hero-buttons">
+.nav-container nav a::after {
+    content: "";
 
-                    <a href="#projects" class="btn primary-btn">
-                        VIEW MY WORK
-                    </a>
+    position: absolute;
+    left: 0;
+    bottom: -7px;
 
-                    <a href="#contact" class="btn secondary-btn">
-                        LET'S CONNECT
-                    </a>
+    width: 0;
+    height: 2px;
 
-                </div>
+    background: var(--blue);
 
-            </div>
+    transition: 0.25s ease;
+}
 
+.nav-container nav a:hover {
+    color: var(--blue);
+}
 
-            <!-- ================= PROFILE CARD ================= -->
+.nav-container nav a:hover::after {
+    width: 100%;
+}
 
-            <div class="hero-card">
 
-                <div class="profile-wrapper">
+/* =========================================
+   HERO
+========================================= */
 
-                    <img
-                        src="images/Georgina.jpeg"
-                        alt="Georgina Adhekugwu"
-                        class="hero-profile-image"
-                    >
+.hero {
+    max-width: var(--max-width);
+    min-height: calc(100vh - 78px);
 
-                </div>
+    margin: 0 auto;
+    padding: 90px 40px;
 
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
 
-                <div class="hero-card-content">
+    align-items: center;
+    gap: 70px;
+}
 
-                    <p class="eyebrow">
-                        CURRENT FOCUS
-                    </p>
+.hero-content {
+    animation: heroReveal 0.9s ease both;
+}
 
-                    <p>
-                        Building practical technology projects that connect
-                        software, data, automation and real-world engineering
-                        problems.
-                    </p>
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-                </div>
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.eyebrow {
+    margin-bottom: 20px;
 
-                <div class="hero-tags">
+    color: var(--blue);
 
-                    <span>Python</span>
-                    <span>Data</span>
-                    <span>Automation</span>
-                    <span>Engineering</span>
-                    <span>Safety</span>
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-                </div>
+.hero h1 {
+    font-size: clamp(58px, 8vw, 108px);
+    line-height: 0.92;
+    letter-spacing: -6px;
+    color: var(--navy);
+}
 
-            </div>
+.hero h1 span {
+    color: var(--blue);
+}
 
-        </section>
+.hero-description {
+    max-width: 680px;
 
+    margin-top: 32px;
 
-        <!-- ================= ABOUT ================= -->
+    font-size: 18px;
+    line-height: 1.8;
+}
 
-        <section id="about" class="section light-section">
+.hero-buttons {
+    display: flex;
+    gap: 13px;
 
-            <div class="section-heading">
-                <span class="section-number">01</span>
-                <h2>About me</h2>
-            </div>
+    margin-top: 36px;
+}
 
-            <div class="about-grid">
+.btn {
+    min-height: 50px;
 
-                <div>
+    padding: 0 24px;
 
-                    <p class="large-text">
-                        I am a Computer Engineering undergraduate interested
-                        in using technology to understand problems, build
-                        practical solutions and improve how systems work.
-                    </p>
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-                </div>
+    border-radius: 10px;
 
+    font-size: 12px;
+    font-weight: 800;
 
-                <div class="about-text">
+    transition: 0.3s ease;
+}
 
-                    <p>
-                        My interests sit around automation, data analytics,
-                        industrial technology and AI. I enjoy learning by
-                        building, experimenting and turning ideas into
-                        working prototypes.
-                    </p>
+.primary-btn {
+    background: var(--navy);
+    color: white;
 
-                    <p>
-                        My engineering journey has strengthened my interest
-                        in equipment monitoring, operational safety and
-                        technology-driven solutions for real-world systems.
-                    </p>
+    box-shadow: 0 10px 25px rgba(16, 24, 47, 0.15);
+}
 
-                    <p>
-                        Beyond technical work, I write, participate in
-                        engineering activities and take on leadership roles
-                        that allow me to collaborate, communicate and create
-                        opportunities for other students.
-                    </p>
+.primary-btn:hover {
+    background: var(--blue);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(82, 103, 216, 0.25);
+}
 
+.secondary-btn {
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--navy);
+}
 
-                    <div class="about-stats">
+.secondary-btn:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-3px);
+}
 
-                        <div>
-                            <strong>2028</strong>
-                            <span>EXPECTED GRADUATION</span>
-                        </div>
 
-                        <div>
-                            <strong>500+</strong>
-                            <span>ACADEMIC SUMMIT ATTENDEES</span>
-                        </div>
+/* =========================================
+   HERO CARD
+========================================= */
 
-                        <div>
-                            <strong>150</strong>
-                            <span>WEBINAR PARTICIPANTS</span>
-                        </div>
+.hero-card {
+    min-height: 480px;
 
-                    </div>
+    padding: 32px;
 
-                </div>
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-            </div>
+    border-radius: 28px;
 
-        </section>
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(82, 103, 216, 0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            var(--navy),
+            var(--navy-2)
+        );
 
+    color: white;
 
-        <!-- ================= SKILLS ================= -->
+    box-shadow:
+        0 30px 70px rgba(16, 24, 47, 0.2);
 
-        <section id="skills" class="section">
+    animation: cardReveal 1s ease 0.15s both;
 
-            <div class="section-heading">
-                <span class="section-number">02</span>
-                <h2>Skills & strengths</h2>
-            </div>
+    position: relative;
+    overflow: hidden;
+}
 
+.hero-card::before {
+    content: "";
 
-            <div class="skills-grid">
+    position: absolute;
+    width: 180px;
+    height: 180px;
 
-                <div class="skill-group">
+    right: -70px;
+    bottom: -70px;
 
-                    <h3>Programming & Technology</h3>
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
 
-                    <div class="skill-list">
-                        <span>Python</span>
-                        <span>C</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>Git</span>
-                        <span>GitHub</span>
-                    </div>
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.97);
+    }
 
-                </div>
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
 
-                <div class="skill-group">
+/* =========================================
+   PROFILE PHOTO
+========================================= */
 
-                    <h3>Data & Analytics</h3>
+.profile-photo {
+    width: 170px;
+    height: 170px;
 
-                    <div class="skill-list">
-                        <span>Google Sheets</span>
-                        <span>Looker Studio</span>
-                        <span>Data Cleaning</span>
-                        <span>Data Visualization</span>
-                        <span>Dashboard Development</span>
-                    </div>
+    border-radius: 50%;
 
-                </div>
+    overflow: hidden;
 
+    border: 6px solid rgba(255, 255, 255, 0.16);
 
-                <div class="skill-group">
+    background: #ddd;
 
-                    <h3>Engineering Interests</h3>
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
 
-                    <div class="skill-list">
-                        <span>Industrial Automation</span>
-                        <span>Equipment Monitoring</span>
-                        <span>PLC</span>
-                        <span>SCADA / DCS</span>
-                        <span>Control Systems</span>
-                        <span>Engineering Safety</span>
-                    </div>
+    position: relative;
+    z-index: 2;
+}
 
-                </div>
+.profile-photo img {
+    width: 100%;
+    height: 100%;
 
+    display: block;
 
-                <div class="skill-group">
+    object-fit: cover;
+    object-position: center top;
+}
 
-                    <h3>Creative & Professional</h3>
+.hero-card-content {
+    position: relative;
+    z-index: 2;
+}
 
-                    <div class="skill-list">
-                        <span>Technical Writing</span>
-                        <span>Content Writing</span>
-                        <span>Graphic Design</span>
-                        <span>Microsoft Office</span>
-                        <span>Communication</span>
-                        <span>Leadership</span>
-                    </div>
+.hero-card p {
+    color: #c8cee0;
+}
 
-                </div>
+.hero-card .eyebrow {
+    color: #aebaff;
+}
 
-            </div>
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
 
+    gap: 8px;
 
-            <div class="strengths">
+    position: relative;
+    z-index: 2;
+}
 
-                <div class="strength">
+.hero-tags span {
+    padding: 8px 12px;
 
-                    <span>01</span>
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
 
-                    <h3>Curiosity</h3>
+    background: rgba(255, 255, 255, 0.08);
 
-                    <p>
-                        I enjoy asking questions, exploring unfamiliar
-                        technologies and learning through practical work.
-                    </p>
+    color: white;
 
-                </div>
+    font-size: 11px;
+    font-weight: 700;
 
+    transition: 0.25s ease;
+}
 
-                <div class="strength">
+.hero-tags span:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
 
-                    <span>02</span>
 
-                    <h3>Leadership</h3>
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
-                    <p>
-                        I take responsibility in team environments and enjoy
-                        helping people work toward a shared outcome.
-                    </p>
+.section {
+    max-width: var(--max-width);
 
-                </div>
+    margin: 0 auto;
 
+    padding: 110px 40px;
+}
 
-                <div class="strength">
+.light-section {
+    max-width: none;
 
-                    <span>03</span>
+    padding-left:
+        max(
+            40px,
+            calc(
+                (100vw - var(--max-width)) / 2 + 40px
+            )
+        );
 
-                    <h3>Communication</h3>
+    padding-right:
+        max(
+            40px,
+            calc(
+                (100vw - var(--max-width)) / 2 + 40px
+            )
+        );
 
-                    <p>
-                        I enjoy writing, presenting ideas and making technical
-                        information easier to understand.
-                    </p>
+    background: var(--soft);
+}
 
-                </div>
+.dark-section {
+    max-width: none;
 
+    background: var(--navy);
 
-                <div class="strength">
+    color: white;
 
-                    <span>04</span>
+    padding-left:
+        max(
+            40px,
+            calc(
+                (100vw - var(--max-width)) / 2 + 40px
+            )
+        );
 
-                    <h3>Consistency</h3>
+    padding-right:
+        max(
+            40px,
+            calc(
+                (100vw - var(--max-width)) / 2 + 40px
+            )
+        );
+}
 
-                    <p>
-                        I believe in learning continuously, building
-                        progressively and improving through practice.
-                    </p>
 
-                </div>
+/* =========================================
+   SECTION HEADINGS
+========================================= */
 
-            </div>
+.section-heading {
+    display: grid;
 
-        </section>
+    grid-template-columns: 65px 1fr;
 
+    align-items: start;
 
-        <!-- ================= PROJECTS ================= -->
+    margin-bottom: 60px;
 
-        <section id="projects" class="section light-section">
+    padding-top: 18px;
 
-            <div class="section-heading">
-                <span class="section-number">03</span>
-                <h2>Selected work</h2>
-            </div>
+    border-top: 1px solid var(--line);
+}
 
+.dark-section .section-heading {
+    border-color: var(--dark-line);
+}
 
-            <div class="projects-grid">
+.section-number {
+    color: var(--blue);
 
-                <!-- PULSE -->
+    font-size: 11px;
+    font-weight: 800;
+}
 
-                <article class="project-card featured-project">
+.section-heading h2 {
+    color: var(--navy);
 
-                    <div class="project-top">
-                        <span class="project-type">FEATURED PROJECT</span>
-                        <span class="project-year">2026</span>
-                    </div>
+    font-size: clamp(38px, 5vw, 65px);
 
-                    <h3>PULSE</h3>
+    line-height: 1;
 
-                    <h4>
-                        Industrial Equipment Condition Monitoring System
-                    </h4>
+    letter-spacing: -3px;
+}
 
-                    <p>
-                        PULSE is a condition-monitoring project exploring how
-                        equipment parameters such as pressure, temperature,
-                        vibration and flow rate can be continuously monitored
-                        to identify abnormal operating conditions.
-                    </p>
+.dark-section .section-heading h2 {
+    color: white;
+}
 
-                    <p>
-                        The current prototype uses Python to simulate
-                        equipment readings, process the data and determine
-                        equipment status, while a Streamlit dashboard provides
-                        a live software monitoring interface.
-                    </p>
 
-                    <p>
-                        The long-term concept involves integrating physical
-                        sensors and embedded hardware into an actual
-                        equipment-monitoring model.
-                    </p>
+/* =========================================
+   ABOUT
+========================================= */
 
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Pandas</span>
-                        <span>Plotly</span>
-                        <span>GitHub</span>
-                        <span>Automation</span>
-                        <span>Safety</span>
-                    </div>
+.about-grid {
+    display: grid;
 
-                    <a
-                        href="https://github.com/adhegeorgina99-collab/PULSE"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        VIEW PULSE ON GITHUB →
-                    </a>
+    grid-template-columns: 1.1fr 1fr;
 
-                </article>
+    gap: 90px;
+}
 
+.large-text {
+    color: var(--navy);
 
-                <!-- SWEP SOLAR -->
+    font-size: clamp(28px, 3.2vw, 45px);
 
-                <article class="project-card">
+    line-height: 1.2;
 
-                    <div class="project-top">
-                        <span class="project-type">ENGINEERING PROJECT</span>
-                        <span class="project-year">SWEP</span>
-                    </div>
+    letter-spacing: -1.5px;
+}
 
-                    <h3>Solar Production</h3>
+.about-text p {
+    margin-bottom: 20px;
+}
 
-                    <p>
-                        A student engineering project focused on exploring
-                        solar energy production and practical applications
-                        of renewable energy technology.
-                    </p>
+.about-stats {
+    display: grid;
 
-                    <div class="project-tags">
-                        <span>Engineering</span>
-                        <span>Solar Energy</span>
-                        <span>Teamwork</span>
-                        <span>Research</span>
-                    </div>
+    grid-template-columns: repeat(3, 1fr);
 
-                </article>
+    gap: 15px;
 
+    margin-top: 38px;
+}
 
-                <!-- SWEP PAINT -->
+.about-stats div {
+    padding-top: 16px;
 
-                <article class="project-card">
+    border-top: 2px solid var(--blue);
+}
 
-                    <div class="project-top">
-                        <span class="project-type">ENGINEERING PROJECT</span>
-                        <span class="project-year">SWEP</span>
-                    </div>
+.about-stats strong {
+    display: block;
 
-                    <h3>Paint Production</h3>
+    color: var(--navy);
 
-                    <p>
-                        A student project involving practical exploration of
-                        paint production, teamwork, process organization and
-                        hands-on engineering learning.
-                    </p>
+    font-size: 24px;
+}
 
-                    <div class="project-tags">
-                        <span>Engineering</span>
-                        <span>Production</span>
-                        <span>Teamwork</span>
-                        <span>Process</span>
-                    </div>
+.about-stats span {
+    display: block;
 
-                </article>
+    margin-top: 5px;
 
+    color: var(--muted);
 
-                <!-- TEAM LEAD -->
+    font-size: 9px;
 
-                <article class="project-card">
+    font-weight: 800;
+}
 
-                    <div class="project-top">
-                        <span class="project-type">LEADERSHIP</span>
-                        <span class="project-year">2026</span>
-                    </div>
 
-                    <h3>Computer Engineering Presentations</h3>
+/* =========================================
+   SKILLS
+========================================= */
 
-                    <p>
-                        Served as a team lead during Computer Engineering
-                        presentation activities, coordinating team members,
-                        communication and presentation delivery.
-                    </p>
+.skills-grid {
+    display: grid;
 
-                    <div class="project-tags">
-                        <span>Team Leadership</span>
-                        <span>Presentation</span>
-                        <span>Communication</span>
-                        <span>Collaboration</span>
-                    </div>
+    grid-template-columns: repeat(2, 1fr);
 
-                </article>
+    gap: 16px;
+}
 
+.skill-group {
+    padding: 30px;
 
-                <!-- DATA -->
+    background: white;
 
-                <article class="project-card">
+    border: 1px solid var(--line);
 
-                    <div class="project-top">
-                        <span class="project-type">DATA ANALYTICS</span>
-                        <span class="project-year">2026</span>
-                    </div>
+    border-radius: 18px;
 
-                    <h3>Data Analytics</h3>
+    transition: 0.3s ease;
+}
 
-                    <p>
-                        Practical data analysis and visualization using
-                        Google Sheets and Looker Studio, including data
-                        cleaning, organization and dashboard development.
-                    </p>
+.skill-group:hover {
+    transform: translateY(-6px);
 
-                    <div class="project-tags">
-                        <span>Google Sheets</span>
-                        <span>Looker Studio</span>
-                        <span>Data Visualization</span>
-                    </div>
+    border-color: #c5ccef;
 
-                </article>
+    box-shadow:
+        0 20px 40px rgba(16, 24, 47, 0.08);
+}
 
+.skill-group h3 {
+    margin-bottom: 20px;
 
-                <!-- WRITING -->
+    color: var(--navy);
 
-                <article class="project-card">
+    font-size: 19px;
+}
 
-                    <div class="project-top">
-                        <span class="project-type">WRITING</span>
-                        <span class="project-year">ONGOING</span>
-                    </div>
+.skill-list {
+    display: flex;
 
-                    <h3>Writing & Communication</h3>
+    flex-wrap: wrap;
 
-                    <p>
-                        Writing across engineering, technology, student
-                        development and professional growth, with a focus on
-                        communicating ideas clearly and practically.
-                    </p>
+    gap: 8px;
+}
 
-                    <div class="project-tags">
-                        <span>Technical Writing</span>
-                        <span>Content Writing</span>
-                        <span>Communication</span>
-                    </div>
+.skill-list span {
+    padding: 8px 11px;
 
-                </article>
+    background: var(--blue-light);
 
-            </div>
+    color: #4654a0;
 
-        </section>
+    border-radius: 100px;
 
+    font-size: 11px;
 
-        <!-- ================= LEADERSHIP ================= -->
+    font-weight: 700;
 
-        <section id="experience" class="section dark-section">
+    transition: 0.25s ease;
+}
 
-            <div class="section-heading">
-                <span class="section-number">04</span>
-                <h2>Leadership & experience</h2>
-            </div>
+.skill-list span:hover {
+    background: var(--blue);
+    color: white;
+    transform: translateY(-2px);
+}
 
 
-            <div class="timeline">
+/* =========================================
+   STRENGTHS
+========================================= */
 
-                <div class="timeline-item">
+.strengths {
+    display: grid;
 
-                    <div class="timeline-date">2025 — 2026</div>
+    grid-template-columns: repeat(4, 1fr);
 
-                    <div>
+    gap: 15px;
 
-                        <h3>Secretary General</h3>
+    margin-top: 18px;
+}
 
-                        <h4>
-                            Nigerian Society of Engineers — FUPRE Students' Chapter
-                        </h4>
+.strength {
+    padding: 28px;
 
-                        <p>
-                            Supporting engineering programmes, student
-                            engagement, communication and chapter activities
-                            as Secretary General.
-                        </p>
+    background: var(--navy);
 
-                    </div>
+    border-radius: 18px;
 
-                </div>
+    color: white;
 
+    transition: 0.3s ease;
+}
 
-                <div class="timeline-item">
+.strength:hover {
+    transform: translateY(-6px);
 
-                    <div class="timeline-date">2024 — PRESENT</div>
+    box-shadow:
+        0 20px 40px rgba(16, 24, 47, 0.15);
+}
 
-                    <div>
+.strength span {
+    color: #aebaff;
 
-                        <h3>Course Representative</h3>
+    font-size: 11px;
 
-                        <h4>
-                            Federal University of Petroleum Resources, Effurun
-                        </h4>
+    font-weight: 800;
+}
 
-                        <p>
-                            Representing students, coordinating communication
-                            and helping facilitate academic information
-                            between students and lecturers.
-                        </p>
+.strength h3 {
+    margin: 25px 0 10px;
 
-                    </div>
+    font-size: 20px;
+}
 
-                </div>
+.strength p {
+    color: #c5cad9;
 
+    font-size: 13px;
+}
 
-                <div class="timeline-item">
 
-                    <div class="timeline-date">2026</div>
+/* =========================================
+   PROJECTS
+========================================= */
 
-                    <div>
+.projects-grid {
+    display: grid;
 
-                        <h3>Host — Internship Architect 2.0</h3>
+    grid-template-columns: repeat(2, 1fr);
 
-                        <h4>NSE FUPRE Students' Chapter</h4>
+    gap: 18px;
+}
 
-                        <p>
-                            Hosted an internship-focused webinar attended by
-                            about <strong>150 students</strong>, with
-                            <strong>70+ participants</strong> remaining on the
-                            call from start to finish.
-                        </p>
+.project-card {
+    padding: 32px;
 
-                    </div>
+    background: white;
 
-                </div>
+    border: 1px solid var(--line);
 
+    border-radius: 20px;
 
-                <div class="timeline-item">
+    transition: 0.35s ease;
+}
 
-                    <div class="timeline-date">2026</div>
+.project-card:hover {
+    transform: translateY(-7px);
 
-                    <div>
+    box-shadow:
+        0 25px 50px rgba(16, 24, 47, 0.1);
+}
 
-                        <h3>Engineering & Industrial Exposure</h3>
+.featured-project {
+    grid-column: 1 / -1;
 
-                        <h4>Industrial Visits & Engineering Activities</h4>
+    padding: 45px;
 
-                        <p>
-                            Participated in engineering activities and
-                            industrial exposure that strengthened my interest
-                            in automation, equipment monitoring, operational
-                            systems and safety.
-                        </p>
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(82, 103, 216, 0.35),
+            transparent 35%
+        ),
+        var(--navy);
 
-                    </div>
+    color: white;
 
-                </div>
+    border: none;
+}
 
-            </div>
+.project-top {
+    display: flex;
 
-        </section>
+    justify-content: space-between;
 
+    align-items: center;
 
-        <!-- ================= ACHIEVEMENTS ================= -->
+    margin-bottom: 25px;
+}
 
-        <section id="achievements" class="section">
+.project-type {
+    color: var(--blue);
 
-            <div class="section-heading">
-                <span class="section-number">05</span>
-                <h2>Achievements & recognition</h2>
-            </div>
+    font-size: 10px;
 
+    font-weight: 800;
 
-            <div class="awards-grid">
+    letter-spacing: 1.5px;
+}
 
-                <article class="award-card">
+.featured-project .project-type {
+    color: #b6c0ff;
+}
 
-                    <span class="award-label">BUILDING</span>
+.project-year {
+    color: var(--muted);
 
-                    <h3>
-                        30-Day Tech Build-a-thon
-                    </h3>
+    font-size: 11px;
 
-                    <p>
-                        Built PULSE as part of a 30-day technology
-                        build-a-thon, taking an idea through research,
-                        development, testing and a working prototype.
-                    </p>
+    font-weight: 700;
+}
 
-                </article>
+.featured-project .project-year {
+    color: #aeb5c8;
+}
 
+.project-card h3 {
+    margin-bottom: 10px;
 
-                <article class="award-card">
+    color: var(--navy);
 
-                    <span class="award-label">RECOGNITION</span>
+    font-size: 28px;
 
-                    <h3>
-                        30-Day Tech Consistency Challenge
-                    </h3>
+    line-height: 1.1;
 
-                    <p>
-                        Completed a 30-day technology consistency challenge,
-                        demonstrating commitment to continuous learning,
-                        building and sharing progress.
-                    </p>
+    letter-spacing: -1px;
+}
 
-                </article>
+.featured-project h3 {
+    color: white;
 
+    font-size: clamp(48px, 7vw, 85px);
 
-                <article class="award-card">
+    letter-spacing: -4px;
+}
 
-                    <span class="award-label">LEADERSHIP</span>
+.project-card h4 {
+    margin-bottom: 22px;
 
-                    <h3>
-                        NSE Academic Summit
-                    </h3>
+    color: var(--blue);
 
-                    <p>
-                        Contributed to an engineering academic summit that
-                        brought together more than <strong>500 students</strong>
-                        around engineering careers, AI and inclusive
-                        innovation.
-                    </p>
+    font-size: 17px;
+}
 
-                </article>
+.featured-project h4 {
+    color: #bbc4ff;
+}
 
+.project-card p {
+    max-width: 760px;
 
-                <article class="award-card">
+    margin-bottom: 16px;
 
-                    <span class="award-label">COMMUNICATION</span>
+    font-size: 14px;
+}
 
-                    <h3>
-                        Internship Architect 2.0
-                    </h3>
+.featured-project p {
+    color: #c6cada;
+}
 
-                    <p>
-                        Hosted a career-focused webinar attended by about
-                        <strong>150 students</strong>, with 70+ remaining
-                        engaged from beginning to end.
-                    </p>
+.project-tags {
+    display: flex;
 
-                </article>
+    flex-wrap: wrap;
 
+    gap: 8px;
 
-                <article class="award-card">
+    margin-top: 28px;
+}
 
-                    <span class="award-label">MERIT AWARD</span>
+.project-tags span {
+    padding: 7px 11px;
 
-                    <h3>
-                        Leadership Personality of the Year
-                    </h3>
+    background: var(--blue-light);
 
-                    <p>
-                        Received a Merit Award in recognition of leadership
-                        and outstanding contribution.
-                    </p>
+    color: #4654a0;
 
-                </article>
+    border-radius: 100px;
 
+    font-size: 10px;
 
-                <article class="award-card">
+    font-weight: 800;
+}
 
-                    <span class="award-label">RECOGNITION</span>
+.featured-project .project-tags span {
+    background: rgba(174, 186, 255, 0.15);
 
-                    <h3>
-                        Exemplary Leadership and Commitment
-                    </h3>
+    color: #d9ddff;
+}
 
-                    <p>
-                        Received an Award of Recognition for exemplary
-                        leadership and commitment.
-                    </p>
+.project-link {
+    display: inline-block;
 
-                </article>
+    margin-top: 28px;
 
+    color: white;
 
-                <article class="award-card">
+    font-size: 12px;
 
-                    <span class="award-label">LEADERSHIP</span>
+    font-weight: 800;
 
-                    <h3>
-                        Outstanding Executive Leadership Award
-                    </h3>
+    border-bottom: 1px solid #8894d7;
 
-                    <p>
-                        Recognized for exceptional leadership and
-                        administrative excellence.
-                    </p>
+    padding-bottom: 5px;
 
-                </article>
+    transition: 0.25s ease;
+}
 
+.project-link:hover {
+    color: #b9c2ff;
 
-                <article class="award-card">
+    padding-left: 5px;
+}
 
-                    <span class="award-label">COMPETITION</span>
 
-                    <h3>
-                        First Runner-Up — Sustainable Engineering & Technology
-                    </h3>
+/* =========================================
+   LEADERSHIP
+========================================= */
 
-                    <p>
-                        First Runner-Up in the Sustainable Engineering and
-                        Technological Solutions to Climate and Food Crisis
-                        Competition, representing the Association of
-                        Professional Women Engineers in Nigeria (APWEN),
-                        FUPRE Chapter.
-                    </p>
+.timeline {
+    max-width: 1000px;
 
-                </article>
+    margin-left: auto;
+}
 
-            </div>
+.timeline-item {
+    display: grid;
 
-        </section>
+    grid-template-columns: 170px 1fr;
 
+    gap: 45px;
 
-        <!-- ================= CERTIFICATIONS ================= -->
+    padding: 35px 0;
 
-        <section class="section light-section">
+    border-top: 1px solid var(--dark-line);
 
-            <div class="section-heading">
-                <span class="section-number">06</span>
-                <h2>Certifications</h2>
-            </div>
+    transition: 0.25s ease;
+}
 
+.timeline-item:last-child {
+    border-bottom: 1px solid var(--dark-line);
+}
 
-            <div class="certifications-list">
+.timeline-item:hover {
+    padding-left: 8px;
+}
 
-                <div class="certification">
+.timeline-date {
+    color: #8991a9;
 
-                    <span>2026</span>
+    font-size: 11px;
 
-                    <div>
-                        <h3>ISPON HSE 2 & 3</h3>
+    font-weight: 800;
+}
 
-                        <p>
-                            Institute of Safety Professionals of Nigeria
-                        </p>
-                    </div>
+.timeline-item h3 {
+    margin-bottom: 5px;
 
-                </div>
+    font-size: 24px;
+}
 
+.timeline-item h4 {
+    margin-bottom: 15px;
 
-                <div class="certification">
+    color: #aebaff;
 
-                    <span>2026</span>
+    font-size: 12px;
+}
 
-                    <div>
-                        <h3>Data Analyst Certificate</h3>
+.timeline-item p {
+    color: #c3c8d5;
 
-                        <p>
-                            Datafied Academy
-                        </p>
-                    </div>
+    font-size: 14px;
+}
 
-                </div>
 
+/* =========================================
+   ACHIEVEMENTS
+========================================= */
 
-                <div class="certification">
+.awards-grid {
+    display: grid;
 
-                    <span>2026</span>
+    grid-template-columns: repeat(2, 1fr);
 
-                    <div>
-                        <h3>Intrapreneurship & Digital Innovation</h3>
+    gap: 18px;
+}
 
-                        <p>
-                            WeBuild + TETFUND
-                        </p>
-                    </div>
+.award-card {
+    min-height: 210px;
 
-                </div>
+    padding: 30px;
 
+    background: white;
 
-                <div class="certification">
+    border: 1px solid var(--line);
 
-                    <span>2026</span>
+    border-radius: 20px;
 
-                    <div>
-                        <h3>Engineering Safety Culture</h3>
+    transition: 0.3s ease;
+}
 
-                        <p>
-                            NiSafety FUPRE
-                        </p>
-                    </div>
+.award-card:hover {
+    transform: translateY(-6px);
 
-                </div>
+    border-color: #c5ccef;
 
+    box-shadow:
+        0 20px 40px rgba(16, 24, 47, 0.08);
+}
 
-                <div class="certification">
+.award-label {
+    color: var(--blue);
 
-                    <span>2023</span>
+    font-size: 9px;
 
-                    <div>
-                        <h3>Computer Training Certificate</h3>
+    font-weight: 800;
 
-                        <p>
-                            College of Education, Warri
-                        </p>
-                    </div>
+    letter-spacing: 1.5px;
+}
 
-                </div>
+.award-card h3 {
+    margin: 18px 0 12px;
 
-            </div>
+    color: var(--navy);
 
-        </section>
+    font-size: 21px;
 
+    line-height: 1.2;
+}
 
-        <!-- ================= MEMBERSHIP ================= -->
+.award-card p {
+    font-size: 13px;
+}
 
-        <section class="membership-section">
 
-            <div class="membership-content">
+/* =========================================
+   CERTIFICATIONS
+========================================= */
 
-                <p class="eyebrow">
-                    PROFESSIONAL MEMBERSHIP
-                </p>
+.certifications-list {
+    border-top: 1px solid var(--line);
+}
 
-                <h2>
-                    Nigerian Society of Engineers (NSE)
-                </h2>
+.certification {
+    display: grid;
 
-                <p>
-                    Student Member
-                </p>
+    grid-template-columns: 100px 1fr;
 
-            </div>
+    gap: 30px;
 
-        </section>
+    padding: 26px 0;
 
+    border-bottom: 1px solid var(--line);
 
-        <!-- ================= CONTACT ================= -->
+    transition: 0.25s ease;
+}
 
-        <section id="contact" class="section contact-section">
+.certification:hover {
+    padding-left: 10px;
+}
 
-            <div class="section-heading">
-                <span class="section-number">07</span>
-                <h2>Let's connect</h2>
-            </div>
+.certification > span {
+    color: var(--blue);
 
+    font-size: 11px;
 
-            <div class="contact-content">
+    font-weight: 800;
+}
 
-                <h2>
-                    Have an idea,
-                    opportunity or project?
-                </h2>
+.certification h3 {
+    margin-bottom: 4px;
 
-                <p>
-                    I am open to connecting around technology, engineering,
-                    data, automation, writing, internships and opportunities
-                    to learn and contribute.
-                </p>
+    color: var(--navy);
 
+    font-size: 19px;
+}
 
-                <div class="contact-links">
+.certification p {
+    font-size: 13px;
+}
 
-                    <a href="mailto:adhegeorgina99@gmail.com">
-                        EMAIL
-                    </a>
 
-                    <a
-                        href="https://www.linkedin.com/in/georgina-adhekugwu-7a71a3262"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LINKEDIN
-                    </a>
+/* =========================================
+   MEMBERSHIP
+========================================= */
 
-                    <a
-                        href="https://github.com/adhegeorgina99-collab"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        GITHUB
-                    </a>
+.membership-section {
+    padding: 90px 40px;
 
-                </div>
+    background:
+        linear-gradient(
+            135deg,
+            #e9ebff,
+            #f3efff
+        );
+}
 
-            </div>
+.membership-content {
+    max-width: var(--max-width);
 
-        </section>
+    margin: 0 auto;
+}
 
-    </main>
+.membership-content h2 {
+    max-width: 850px;
 
+    color: var(--navy);
 
-    <!-- ================= FOOTER ================= -->
+    font-size: clamp(38px, 5vw, 65px);
 
-    <footer>
+    line-height: 1;
 
-        <p>
-            © 2026 Georgina Adhekugwu.
-        </p>
+    letter-spacing: -3px;
+}
 
-    </footer>
+.membership-content p:last-child {
+    margin-top: 20px;
 
-</body>
-</html>
+    color: #555f79;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    padding-bottom: 130px;
+}
+
+.contact-content {
+    max-width: 850px;
+
+    margin-left: auto;
+}
+
+.contact-content h2 {
+    color: var(--navy);
+
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+.contact-content > p {
+    max-width: 600px;
+
+    margin-top: 28px;
+
+    font-size: 16px;
+}
+
+.contact-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.contact-links a {
+    padding: 12px 19px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: var(--navy);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.contact-links a:hover {
+    background: var(--navy);
+
+    color: white;
+
+    border-color: var(--navy);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 28px 40px;
+
+    background: var(--navy);
+
+    text-align: center;
+}
+
+footer p {
+    color: #8991a9;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-container nav {
+        gap: 15px;
+    }
+
+    .nav-container nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 75px;
+    }
+
+    .hero-card {
+        max-width: 650px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .strengths {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        min-height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .nav-container nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 22px;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 14vw, 75px);
+
+        letter-spacing: -4px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-card {
+        min-height: 430px;
+
+        padding: 28px;
+    }
+
+    .profile-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+    .section {
+        padding: 80px 22px;
+    }
+
+    .light-section,
+    .dark-section {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .section-heading {
+        grid-template-columns: 45px 1fr;
+
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .awards-grid,
+    .strengths {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project {
+        grid-column: auto;
+
+        padding: 30px 24px;
+    }
+
+    .featured-project h3 {
+        font-size: 55px;
+    }
+
+    .project-card {
+        padding: 26px 23px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .certification {
+        grid-template-columns: 1fr;
+
+        gap: 7px;
+    }
+
+    .membership-section {
+        padding: 70px 22px;
+    }
+
+    .membership-content h2 {
+        font-size: 42px;
+    }
+
+    .contact-content h2 {
+        font-size: 48px;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
